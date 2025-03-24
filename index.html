@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GameSpark – Indie Game Crowdfunding</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #1f1f1f;
+      color: #f0f0f0;
+    }
+
+    header, footer {
+      background-color: #111;
+      text-align: center;
+      padding: 1.5rem 2rem;
+    }
+
+    header h1, footer p {
+      margin: 0;
+      color: #ff1744;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: linear-gradient(135deg, #1f1f1f, #2c2c2c);
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #ffea00;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+
+    .cta-button {
+      background-color: #ff1744;
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .features, .projects, .portal {
+      padding: 3rem 1rem;
+    }
+
+    .features, .project-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .feature, .project-card {
+      background: #2a2a2a;
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      max-width: 300px;
+      box-shadow: 0 0 10px #ffea00;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .tab {
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      background: #333;
+      border-radius: 5px;
+      color: white;
+    }
+
+    .tab.active {
+      background: #ff1744;
+    }
+
+    .tab-content {
+      display: none;
+      text-align: left;
+      max-width: 500px;
+      margin: auto;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border-radius: 5px;
+      border: none;
+    }
+
+    .project-card h4 {
+      color: #ffea00;
+    }
+
+    button[type="submit"] {
+      background: #ffea00;
+      color: #111;
+      font-weight: bold;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>🎮 GameSpark</h1>
+</header>
+
+<section class="hero">
+  <h2>Fuel the Future of Indie Games</h2>
+  <p>Back bold ideas, support independent creators, and discover the next big hit before anyone else.</p>
+  <button class="cta-button">Start Exploring</button>
+</section>
+
+<section class="features">
+  <div class="feature">
+    <h3>🌱 Support Creators</h3>
+    <p>Fund the games you want to play. Every pledge helps bring a creative vision to life.</p>
+  </div>
+  <div class="feature">
+    <h3>🕹️ Discover Hidden Gems</h3>
+    <p>Be the first to find and support innovative projects from indie developers worldwide.</p>
+  </div>
+  <div class="feature">
+    <h3>🚀 Launch Your Game</h3>
+    <p>Are you a developer? Launch your campaign and build your dream with community support.</p>
+  </div>
+</section>
+
+<section class="portal">
+  <h2 style="text-align:center; color:#ffea00">Join the Movement</h2>
+  <div class="tabs">
+    <div class="tab active" onclick="switchTab('dev')">I'm a Developer</div>
+    <div class="tab" onclick="switchTab('gamer')">I'm a Gamer</div>
+  </div>
+  <div id="dev" class="tab-content active">
+    <form action="https://formspree.io/f/your-dev-form-id" method="POST">
+      <input type="email" name="email" placeholder="Your Email" required />
+      <select name="genre" required>
+        <option value="">Select Genre</option>
+        <option value="RPG">RPG</option>
+        <option value="Platformer">Platformer</option>
+        <option value="Strategy">Strategy</option>
+        <option value="Puzzle">Puzzle</option>
+        <option value="Shooter">Shooter</option>
+      </select>
+      <input type="text" name="funding" placeholder="Funding Needed (USD)" required />
+      <textarea name="gameDesc" placeholder="Describe your game" required></textarea>
+      <textarea name="teamDesc" placeholder="Describe your team" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  <div id="gamer" class="tab-content">
+    <form action="https://formspree.io/f/your-gamer-form-id" method="POST">
+      <input type="email" name="email" placeholder="Your Email to Join Waitlist" required />
+      <button type="submit">Join Waitlist</button>
+    </form>
+  </div>
+</section>
+
+<section class="projects">
+  <h2 style="text-align:center; color:#ffea00">Games Seeking Funding</h2>
+  <div class="project-grid">
+    <div class="project-card">
+      <h4>Neon Drift</h4>
+      <p>A futuristic racing game in a cyberpunk city. Goal: $25,000 – 40% funded</p>
+    </div>
+    <div class="project-card">
+      <h4>Witchlight</h4>
+      <p>A magic puzzle game in a haunted forest. Goal: $12,000 – 85% funded</p>
+    </div>
+    <div class="project-card">
+      <h4>Gravitas</h4>
+      <p>Zero-gravity multiplayer shooter with unique physics. Goal: $30,000 – 60% funded</p>
+    </div>
+    <div class="project-card">
+      <h4>Chrono Collapse</h4>
+      <p>Time-travel platformer across alternate realities. Goal: $20,000 – 95% funded</p>
+    </div>
+    <div class="project-card">
+      <h4>Bit Reaper</h4>
+      <p>Pixel rogue-like game with permadeath mechanics. Goal: $18,000 – 70% funded</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 GameSpark. All rights reserved.</p>
+</footer>
+
+<script>
+  function switchTab(tab) {
+    document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+    document.querySelector(`.tab[onclick*='${tab}']`).classList.add('active');
+    document.getElementById(tab).classList.add('active');
+  }
+</script>
+
+</body>
+</html>
